@@ -1,0 +1,17 @@
+{{ define "title" }}Details{{end}}
+{{define "content"}}
+<div>
+    Existing users:
+   <table>
+    {{range .}}
+        <tr>
+            <td>{{.Username}}</td>
+            <td>{{.Name}}</td>
+            <td>{{.Password}}</td>
+        <tr>
+    {{else}}
+    NO USERS HAVE BEEN REGISTERED.
+    {{end}}
+    </table>
+</div> 
+{{end}}

@@ -1,0 +1,26 @@
+{{ define "title" }}Login{{end}}
+{{define "content"}}
+<div>
+    <div>
+        Enter your login details:
+    </div>
+    <div><!--Login form-->
+        <form action="/" method="POST">
+            <input type="text" name="username" placeholder="Enter your username" />
+            <input type="password" name="password" placeholder="Enter your password">
+            <input type="submit" name="submit" value="submit" />
+        </form>
+    </div>
+    <div><!-- Error Message if validation fails -->
+        {{if .message }}
+        {{ .message }}
+        {{end}}
+        {{if .details }}
+            <a href="{{.detail_route}}">{{ .details }}</a>
+        {{end}}
+    </div>
+    <div><!--Link for registration-->
+        <p><a href="/register">Click here to register!</a></p>
+    </div>
+</div> 
+{{end}}
